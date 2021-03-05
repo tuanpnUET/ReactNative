@@ -2,12 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, ScrollView, Item, SafeAreaView, FlatList } from 'react-native';
 
+import Header from './src/components/Header'
 export default function App() {
   const [todoItem, setTodoItem] = useState('');
   const [todoList, setTodoList] = useState([]);
-
+  
   const addTodoList = () => {
-    setTodoList(...todoList, todoItem);
+    setTodoList([...todoList, todoItem]);
     console.log(todoList);
   }
   const DATA = [
@@ -34,31 +35,34 @@ export default function App() {
   );
 
   return (
-    <View style={styles.container}>
-      <View>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter todo item"
-          onChangeText={text => setTodoItem(text)}
-          value={todoItem}
-        />
+    <View>
+      <Header />
+      <View style={styles.container}>
+        <View>
+          <TextInput
+            style={styles.textInput}
+            // text="Play Girl"
+            placeholder="Enter todo item"
+            onChangeText={text => setTodoItem(text)}
+            value={todoItem}
+          />
           <Button 
-          title="Add to do"
-          // onPress = {() => console.log("Button clicked")}
-          onPress={addTodoList}
-        />
+            title="Add to do"
+            // onPress = {() => console.log("Button clicked")}
+            onPress={addTodoList}
+          />
+        </View>
+        <View>
+          {todoList.map(todo => <View style={styles.todoItem}><Text>{todo}</Text></View>)}
+        </View>
+        <SafeAreaView style={styles.container}>
+          <FlatList
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+          ></FlatList>
+        </SafeAreaView>
       </View>
-      {/* <ScrollView>
-        {todoList.map(todo => <View style={styles.todoItem}><Text>{todo}</Text></View>)}
-      </ScrollView> */}
-      <SafeAreaView style={styles.container}>
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-        ></FlatList>
-      </SafeAreaView>
-
     </View>
   );
 }
