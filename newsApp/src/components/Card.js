@@ -33,10 +33,11 @@ const styles = StyleSheet.create({
     },
     imageWrapper: {
         width: "100%",
-        height: "60%",
+        height: "80%",
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        resizeMode: 'stretch'
     },
     titleWrapper: {
         height: '10%',

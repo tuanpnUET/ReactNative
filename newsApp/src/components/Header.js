@@ -7,13 +7,13 @@ const Header = () => {
             <View style={styles.header}>
                 <Text style={styles.title}>News App</Text>
             </View>
-            <View 
+            {/* <View 
                 style={{backgroundColor: 'silver', 
                         padding: 10, 
                         flex: 1, 
                         flexDirection: 'row',
                         justifyContent: 'space-around',
-                        alignItems: 'flex-end'
+                        alignItems: 'baseline'
             }}>
                 <View style={{width: 60, height: 60, backgroundColor: 'red'}}>
                     <Text>VietNam</Text>
@@ -24,7 +24,7 @@ const Header = () => {
                 <View style={{width: 60, height: 60, backgroundColor: 'green'}}>
                     <Text>Amerian</Text>
                 </View>
-            </View>
+            </View> */}
         </View>        
     );
 };
