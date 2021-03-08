@@ -1,3 +1,5 @@
 expo init nameOfProject
 cd nameOfProject
 npm start
+
+https://reactnavigation.org/docs/getting-started
