@@ -3,13 +3,17 @@ import {StyleSheet, View, Text} from 'react-native';
 
 import Header from '../components/Header';
 import Card from '../components/Card';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const NewsListScreen = () => {
+const NewsListScreen = props => {
 
+    console.log(props);
     return (
         <View>
           <Header />
-          <Card />
+          <TouchableOpacity onPress={() => props.navigation.navigate('Girl Detail')}>
+            <Card navigation={props.navigation}/>
+          </TouchableOpacity>
         </View>
     );
 };

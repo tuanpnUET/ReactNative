@@ -5,7 +5,7 @@ const Header = () => {
     return(
         <View>
             <View style={styles.header}>
-                <Text style={styles.title}>News App</Text>
+                <Text style={styles.title}>Hot Girl News</Text>
             </View>
             {/* <View 
                 style={{backgroundColor: 'silver', 
@@ -31,12 +31,13 @@ const Header = () => {
 const styles = StyleSheet.create({
     header: {
         backgroundColor: Platform.OS === 'android' ? '#72bcd4' : '#ffffff',
-        padding: 15,
+        padding: 5,
         borderBottomColor: Platform.OS === 'android' ? '#ffffff' : '#72bcd4',
         borderBottomWidth: 1
     },
     title: {
-        marginTop: 40, 
+        marginTop: 10, 
+        marginBottom: 10,
         textAlign: 'center',
         fontSize: 20,
         color: Platform.OS === 'android' ? '#ffffff' : '#72bcd4'
